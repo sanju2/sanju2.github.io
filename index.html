@@ -64,8 +64,10 @@
                <li><a href="https://www.linkedin.com/in/lasanthasilva"><i class="fa fa-linkedin"></i></a></li>
                <li><a href="https://twitter.com/LasanthaSilva96"><i class="fa fa-twitter"></i></a></li>
                <li><a href="https://github.com/sanju2"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.instagram.com/devopswithlasantha/?hl=en"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://www.instagram.com/devopswithlasantha/?hl=en"><i class="fa fa-instagram"></i></a>
+               </li>
             </ul>
+            Visitor Count - <span id="visitor_counter" style="font-size: large"/>
          </div>
       </div>
 
@@ -294,6 +296,13 @@
    <script src="js/jquery.fittext.js"></script>
    <script src="js/magnific-popup.js"></script>
    <script src="js/init.js"></script>
+   <script>
+      fetch('https://klwawx925m.execute-api.us-east-2.amazonaws.com/dev')
+         .then(response => response.json())
+         .then((data) => {
+            document.getElementById('visitor_counter').innerText = data.Count
+         })
+   </script>
 
 </body>
 
